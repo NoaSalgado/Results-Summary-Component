@@ -11,7 +11,7 @@ data.forEach((category) => {
         </div>
 
         <p class="category__score">
-        ${category.score} / 100
+        ${category.score} <span> / 100</span>
         </p>
     </div>
     `;
