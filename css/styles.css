@@ -38,6 +38,7 @@
 
   --clr-bg-first: hsl(252, 100%, 67%);
   --clr-bg-second: hsl(241, 81%, 54%);
+  --clr-bg: hsl(221, 100%, 96%);
 
   --clr-circle-first: hsla(256, 72%, 46%, 1);
   --clr-circle-second: hsla(241, 72%, 46%, 0);
@@ -50,6 +51,7 @@
 
 /* Globals */
 body {
+  background-color: var(--clr-bg);
   font-family: 'HankenGrotesk', sans-serif;
   font-size: 1.125rem;
   font-weight: normal;
@@ -73,6 +75,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   row-gap: 1.5rem;
 }
 
@@ -119,6 +122,7 @@ body {
 
 /* Summary Section */
 .summary {
+  background-color: var(--clr-white);
   padding: 2rem;
 }
 
@@ -182,8 +186,49 @@ body {
   border: none;
   border-radius: 2rem;
   color: var(--clr-white);
+  cursor: pointer;
   font-size: inherit;
   font-weight: bold;
   padding: 1rem 0;
   width: 100%;
+  transition: all 0.5s ease-in;
+}
+
+/* Media query for button hover effect */
+@media (hover: hover) {
+  .btn:hover {
+    background: linear-gradient(
+      to bottom,
+      var(--clr-bg-first),
+      var(--clr-bg-second)
+    );
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  /* Globals */
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  main {
+    background-color: var(--clr-white);
+    box-shadow: 0 0 50px -16px var(--clr-font-dark-blue);
+    border-radius: 2rem;
+    display: flex;
+  }
+
+  .result {
+    flex-basis: 50%;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+  }
+
+  .summary {
+    flex-basis: 50%;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
 }
