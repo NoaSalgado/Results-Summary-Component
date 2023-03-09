@@ -6,7 +6,7 @@ data.forEach((category) => {
   categoriesHtml += `
     <div class="category">
         <div class="category__name">
-            <img src="../${category.icon}"/>
+            <img src="${category.icon}"/>
             <p>${category.category}</p>
         </div>
 
